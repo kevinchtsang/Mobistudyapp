@@ -12,7 +12,8 @@
           <q-input
             class="col-grow"
             v-model="token"
-            type="text"
+            type="textarea"
+            autogrow
             @blur.native="$v.token.$touch"
             clearable
             :label="$t('accountMgmt.resetPassword.token')"
@@ -56,7 +57,7 @@
             <q-btn
               class="float-right"
               :label="$t('accountMgmt.resetPassword.changePassword')"
-              color="positive"
+              color="primary"
               type="submit"
               @click="resetUserPassword"
             />
@@ -70,7 +71,7 @@
 <script>
 import i18nStrings from 'i18n/accountMgmt/accountMgmt'
 import i18nPwdCheck from 'i18n/passwordCheck/passwordCheck'
-import { mergeDeep } from 'modules/tools.mjs'
+import { mergeDeep } from 'modules/tools.js'
 
 import { checkPwdStrength, pwdCheckError, owaspConfig } from 'modules/passwordChecker'
 import { required, sameAs } from 'vuelidate/lib/validators'

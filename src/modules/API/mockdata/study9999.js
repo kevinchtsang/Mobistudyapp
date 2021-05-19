@@ -76,6 +76,38 @@ export default {
         intervalType: 'd',
         interval: 1
       },
+      formKey: '9999Health',
+      formName: {
+        en: 'Health questionnaire',
+        sv: 'Hälsoenkät'
+      }
+    },
+    {
+      id: 2,
+      type: 'form',
+      scheduling: {
+        startEvent: 'consent',
+        startDelaySecs: 0,
+        untilSecs: 2592000, // 1 month
+        intervalType: 'd',
+        interval: 1
+      },
+      formKey: '9999whoqol',
+      formName: {
+        en: 'WHO Quality of Life',
+        sv: 'WHO Livskvalitet'
+      }
+    },
+    {
+      id: 3,
+      type: 'form',
+      scheduling: {
+        startEvent: 'consent',
+        startDelaySecs: 0,
+        untilSecs: 2592000, // 1 month
+        intervalType: 'd',
+        interval: 1
+      },
       formKey: '9999',
       formName: {
         en: 'COVID-19 Symptoms questionnaire',
@@ -83,7 +115,7 @@ export default {
       }
     },
     {
-      id: 2,
+      id: 4,
       type: 'miband3',
       scheduling: {
         startEvent: 'consent',
@@ -95,7 +127,7 @@ export default {
       hrInterval: 5
     },
     {
-      id: 3,
+      id: 5,
       type: 'dataQuery',
       scheduling: {
         startEvent: 'consent',
@@ -109,7 +141,7 @@ export default {
       bucket: 'day'
     },
     {
-      id: 4,
+      id: 6,
       type: 'po60',
       scheduling: {
         alwaysOn: true,
@@ -271,31 +303,45 @@ export default {
     taskItems: [
       {
         description: {
+          en: 'I agree to share my answers to the health questionnaire every day.',
+          sv: 'Jag accepterar att dela mina svar på hälsoenkäten varje dag.'
+        },
+        taskId: 1
+      },
+      {
+        description: {
+          en: 'I agree to share my answers to the WHO quality of life questionnaire every day.',
+          sv: 'Jag accepterar att dela mina svar på livskvalitetsenkäten varje dag.'
+        },
+        taskId: 2
+      },
+      {
+        description: {
           en: 'I agree to share my answers to the COVID-19 Symptoms questionnaire every day.',
           sv: 'Jag accepterar att dela mina svar på COVID-19-symptom via enkät varje dag.'
         },
-        taskId: 1
+        taskId: 3
       },
       {
         description: {
           en: 'I agree to send the data collected by the activty tracker every day.',
           sv: 'Jag accepterar att skicka data insamlat av aktivitetsbandet varje dag.'
         },
-        taskId: 2
+        taskId: 4
       },
       {
         description: {
           en: 'I agree to send the data about my physical activity collected by my phone every week.',
           sv: 'Jag accepterar att skicka data om mina fysiska aktiviteter insamlat av min telefon varje vecka.'
         },
-        taskId: 3
+        taskId: 5
       },
       {
         description: {
           en: 'I agree to send the readings of the pulseoximeter at least once a day.',
           sv: 'Jag accepterar att skicka mätningar med pulsoximetern minst en gång om dagen.'
         },
-        taskId: 4
+        taskId: 6
       }
     ]
   }

@@ -63,7 +63,7 @@
 <script>
 import i18nStrings from 'i18n/accountMgmt/accountMgmt'
 import i18nPwdCheck from 'i18n/passwordCheck/passwordCheck'
-import { mergeDeep } from 'modules/tools.mjs'
+import { mergeDeep } from 'modules/tools.js'
 
 import { checkPwdStrength, pwdCheckError, owaspConfig } from 'modules/passwordChecker'
 import API from 'modules/API/API'
@@ -118,10 +118,17 @@ export default {
               message: this.$i18n.t('accountMgmt.registration.registrationErrorUserExists'),
               icon: 'report_problem'
             })
-          } else {
+          } if (error.response && error.response.status === 400) {
             this.$q.notify({
               color: 'negative',
-              message: this.$i18n.t('accountMgmt.registration.registrationError') + ': ' + error.message,
+              message: this.$i18n.t('accountMgmt.registration.registrationErrorWrongEmail'),
+              icon: 'report_problem'
+            })
+          } else {
+            let errmsg = error.response && error.response.data ? error.response.data : error.message
+            this.$q.notify({
+              color: 'negative',
+              message: this.$i18n.t('accountMgmt.registration.registrationError') + ': ' + errmsg,
               icon: 'report_problem'
             })
           }

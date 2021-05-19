@@ -1,263 +1,193 @@
 export default {
   name: {
-    en: 'Clinical COPD Questionnaire',
-    sv: 'Kliniska COPD-frågeformuläret'
+    en: 'Example Questionnaire',
+    sv: 'Exempel formulär',
+    es: 'Formulario de ejemplo'
   },
   description: {
-    en: 'The Clinical COPD Questionnaire (CCQ) is a simple 10-item, health-related quality of life questionnaire (HRQoL) with good psychometric properties.',
-    sv: 'Det kliniska COPD-frågeformuläret (CCQ) är en enkel frågeformulär för hälsorelaterad livskvalitet (HRQoL) med goda psykometriska egenskaper.'
+    en: 'This is an example questionnaire that show-cases Mobsitudy forms.',
+    sv: 'Detta är ett exempel på frågeformulär som visar fall Mobsitudy-former.',
+    es: 'Este es un ejemplo de formulario que muestra como funcionan los formularios en Mobsitudy.'
   },
   questions: [
+
     {
       id: 'Q1',
       text: {
-        en: 'How many steps do you think you have taken so far today?',
-        sv: 'I genomsnitt under den senaste veckan, hur ofta kände du andnöd i vila?'
+        en: 'Example of only text question without any answer.',
+        sv: 'Exempel på endast textfråga utan något svar.',
+        es: 'Ejemplo de pregunta con solo texto y ninguna respuesta.'
       },
       helper: {
-        en: 'Amount of steps so far.',
-        sv: 'Välj ett alternativ.'
+        en: 'No answer has to be given here.',
+        sv: 'Inget svar behöver ges här.',
+        es: 'No hay que dar ninguna respuesta.'
       },
-      type: 'singleChoice',
-      answerChoices: [
-        {
-          id: 'Q1A1',
-          text: {
-            en: 'Below 100',
-            sv: 'aldrig'
-          }
-        },
-        {
-          id: 'Q1A2',
-          text: {
-            en: 'Above 100 but below 500',
-            sv: 'nästan aldrig'
-          }
-        },
-        {
-          id: 'Q1A3',
-          text: {
-            en: 'Above 500',
-            sv: 'några gånger'
-          }
-        }
-      ]
+      type: 'textOnly'
     },
+
     {
       id: 'Q2',
       text: {
-        en: 'On average, during the past week, how often did you feel short of breath doing physical activities?',
-        sv: 'I genomsnitt under den senaste veckan, hur ofta kände du kort andedräkt som gör fysiska aktiviteter'
+        en: 'Example of slider question.',
+        sv: 'Exempel på skjutreglage svar.',
+        es: 'Ejemplo de pregunta con escala (deslizador).'
       },
       helper: {
-        en: 'Choose one option.',
-        sv: 'Välj ett alternativ.'
+        en: 'Choose the value by moving the dot up or down.',
+        sv: 'Välj värdet genom att flytta punkten uppåt eller nedåt.',
+        es: 'Elige el valor moviendo el punto arriba o abajo.'
       },
-      type: 'singleChoice',
-      answerChoices: [
-        {
-          id: 'Q2A1',
-          text: {
-            en: 'never',
-            sv: 'aldrig'
-          }
-        },
-        {
-          id: 'Q2A2',
-          text: {
-            en: 'hardly ever',
-            sv: 'nästan aldrig'
-          }
-        },
-        {
-          id: 'Q2A3',
-          text: {
-            en: 'a few times',
-            sv: 'några gånger'
-          }
-        },
-        {
-          id: 'Q2A4',
-          text: {
-            en: 'several times',
-            sv: 'flera gånger'
-          }
-        },
-        {
-          id: 'Q2A5',
-          text: {
-            en: 'many times',
-            sv: 'många gånger'
-          }
-        },
-        {
-          id: 'Q2A6',
-          text: {
-            en: 'almost all the time',
-            sv: 'nästan hela tiden'
-          }
-        }
-      ]
+      type: 'slider',
+      min: 1,
+      minText: {
+        en: 'Minimum value',
+        sv: 'Minsta värde',
+        es: 'Valor minimo'
+      },
+      max: 100,
+      maxText: {
+        en: 'Maximum value',
+        sv: 'Maximalt värde',
+        es: 'Valor maximo'
+      }
     },
+
     {
       id: 'Q3',
       text: {
-        en: 'On average, during the past week, how often did you feel concerned about getting a cold or your breathing getting worse?',
-        sv: 'I genomsnitt under den senaste veckan, hur ofta kände du dig bekymrad över att bli förkylt eller att andningen blev värre?'
+        en: 'Example single-choice questionnaire. Which choice do you prefer?',
+        sv: 'Exempel på enkät frågeformulär. Vilket val föredrar du?',
+        es: 'Ejemplo de pregunta con eleccion singula. Cual prefieres?'
       },
       helper: {
-        en: 'Choose one option.',
-        sv: 'Välj ett alternativ.'
+        en: 'Only one choice can be selected.',
+        sv: 'Välj ett alternativ.',
+        es: 'Solo una opcion puede ser elegida.'
       },
       type: 'singleChoice',
       answerChoices: [
         {
           id: 'Q3A1',
           text: {
-            en: 'never',
-            sv: 'aldrig'
+            en: 'Choice 1',
+            sv: 'Val 1',
+            es: 'Opcion 1'
           }
         },
         {
           id: 'Q3A2',
           text: {
-            en: 'hardly ever',
-            sv: 'nästan aldrig'
+            en: 'Choice 2',
+            sv: 'Val 2',
+            es: 'Opcion 2'
           }
         },
         {
           id: 'Q3A3',
           text: {
-            en: 'a few times',
-            sv: 'några gånger'
+            en: 'Choice 3',
+            sv: 'Val 3',
+            es: 'Opcion 3'
           }
         },
         {
           id: 'Q3A4',
           text: {
-            en: 'several times',
-            sv: 'flera gånger'
-          }
-        },
-        {
-          id: 'Q3A5',
-          text: {
-            en: 'many times',
-            sv: 'många gånger'
-          }
-        },
-        {
-          id: 'Q3A6',
-          text: {
-            en: 'almost all the time',
-            sv: 'nästan hela tiden'
-          }
+            en: 'Other',
+            sv: 'Övrig',
+            es: 'Otro'
+          },
+          includeFreeText: true
         }
       ]
     },
     {
       id: 'Q4',
       text: {
-        en: 'On average, during the past week, how often did you feel depressed because of your breathing problems?',
-        sv: 'I genomsnitt under den senaste veckan, hur ofta kände du deprimerad på grund av dina andningsproblem?'
+        en: 'Example freetext question.',
+        sv: 'Exempel på fritextfråga.',
+        es: 'Ejemplo de pregunta con texto libre.'
+      },
+      footer: {
+        en: `Example of footer text.`,
+        sv: `Exempel på sidfotstext.`,
+        es: 'Ejemplo de nota a pie de pagina.'
       },
       helper: {
-        en: 'Choose one option.',
-        sv: 'Välj ett alternativ.'
-      },
-      type: 'singleChoice',
-      answerChoices: [
-        {
-          id: 'Q4A1',
-          text: {
-            en: 'never',
-            sv: 'aldrig'
-          }
-        },
-        {
-          id: 'Q4A2',
-          text: {
-            en: 'hardly ever',
-            sv: 'nästan aldrig'
-          }
-        },
-        {
-          id: 'Q4A3',
-          text: {
-            en: 'a few times',
-            sv: 'några gånger'
-          }
-        },
-        {
-          id: 'Q4A4',
-          text: {
-            en: 'several times',
-            sv: 'flera gånger'
-          }
-        },
-        {
-          id: 'Q4A5',
-          text: {
-            en: 'many times',
-            sv: 'många gånger'
-          }
-        },
-        {
-          id: 'Q4A6',
-          text: {
-            en: 'almost all the time',
-            sv: 'nästan hela tiden'
-          }
-        }
-      ]
-    },
-    {
-      id: 'Q5',
-      text: {
-        en: 'Describe how you feel.',
-        sv: 'Beskriv hur du mår.'
-      },
-      helper: {
-        en: 'Use your own words.',
-        sv: 'Använd dina egna ord.'
+        en: 'Any text is valid.',
+        sv: 'Alla texter är giltiga.',
+        es: 'Cualquier texto es valido.'
       },
       type: 'freetext'
     },
+
+    {
+      id: 'Q5',
+      text: {
+        en: 'Example multi-choice question.',
+        sv: 'Exempel på flervalsfråga.',
+        es: 'Ejemplo de pregunta de eleccion multiple.'
+      },
+      helper: {
+        en: 'Multiple choices can be selected.',
+        sv: 'Flera val kan väljas.',
+        es: 'Se pueden elegir mulitples.'
+      },
+      type: 'multiChoice',
+      answerChoices: [
+        {
+          id: 'Q5A1',
+          text: {
+            en: 'Choice 1',
+            sv: 'Val 1',
+            es: 'Opcion 1'
+          }
+        },
+        {
+          id: 'Q5A2',
+          text: {
+            en: 'Choice 2',
+            sv: 'Val 2',
+            es: 'Opcion 2'
+          }
+        },
+        {
+          id: 'Q5A3',
+          text: {
+            en: 'Choice 3',
+            sv: 'Val 3',
+            es: 'Opcion 3'
+          }
+        },
+        {
+          id: 'Q5A4',
+          text: {
+            en: 'Other',
+            sv: 'Övrig',
+            es: 'Otro'
+          },
+          includeFreeText: true
+        }
+      ]
+    },
+
     {
       id: 'Q6',
       text: {
-        en: 'Describe your symptoms.',
-        sv: 'Beskriv dina symtom.'
+        en: 'Example of number question.',
+        sv: 'Exempel på nummerfråga.',
+        es: 'Ejemplo de pregunta numerica.'
       },
+      min: 1,
+      max: 10,
       helper: {
-        en: 'Choose as many as you want.',
-        sv: 'Välj så många du vill.'
+        en: 'A number between 1 and 10 must be inserted.',
+        sv: 'Ett tal mellan 1 och 10 måste infogas.',
+        es: 'Se puede insertar un numero entre 1 y 10.'
       },
-      type: 'multiChoice',
-      nextDefaultId: 'ENDFORM',
-      answerChoices: [
-        {
-          id: 'Q6A1',
-          text: {
-            en: 'Cough',
-            sv: 'Hosta'
-          }
-        },
-        {
-          id: 'Q6A2',
-          text: {
-            en: 'Sputum',
-            sv: 'Sputum'
-          }
-        },
-        {
-          id: 'Q6A3',
-          text: {
-            en: 'Short of breath',
-            sv: 'Andfådd'
-          }
-        }
-      ]
+      type: 'number',
+      nextDefaultId: 'ENDFORM'
     }
   ],
   createdTS: '2018-11-09T10:49:50.473Z'

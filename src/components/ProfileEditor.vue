@@ -268,6 +268,10 @@ export default {
         {
           label: this.$i18n.t('accountMgmt.profile.languages.sv'),
           value: 'sv'
+        },
+        {
+          label: this.$i18n.t('accountMgmt.profile.languages.es'),
+          value: 'es'
         }
       ],
       countryOptions: [
@@ -278,6 +282,10 @@ export default {
         {
           label: this.$i18n.t('accountMgmt.profile.countries.se'),
           value: 'se'
+        },
+        {
+          label: this.$i18n.t('accountMgmt.profile.countries.es'),
+          value: 'es'
         }
       ],
       diseaseOptions: [],
@@ -382,7 +390,7 @@ export default {
         return
       }
       try {
-        let concepts = await API.searchDiseaseConcept(diseaseDescription, 'en')
+        let concepts = await API.searchDiseaseConcept(diseaseDescription, this.value.language)
         concepts = concepts.filter((concept) => {
           if (!this.conceptIdExistsInArrayOfObjects(this.value.diseases, concept.conceptId)) {
             return true
@@ -423,7 +431,7 @@ export default {
         return
       }
       try {
-        let concepts = await API.searchMedicationConcept(medDescription, 'en')
+        let concepts = await API.searchMedicationConcept(medDescription, this.value.language)
         concepts = concepts.filter((concept) => {
           if (!this.conceptIdExistsInArrayOfObjects(this.value.medications, concept.conceptId)) {
             return true
